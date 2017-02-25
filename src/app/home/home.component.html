@@ -1,0 +1,37 @@
+<app-navbar></app-navbar>
+<br>
+
+<app-loading *ngIf="loading"></app-loading>
+
+<div class="container is-fluid" *ngIf="!loading">
+    <div class="columns is-multiline">
+        <div class="column animated pulse" *ngFor="let photo of photos | async">
+            <div class="card">
+                <div class="card-image">
+                    <figure class="image is-4by3">
+                        <img src="{{ photo.image }}" alt="{{ photo.message }}">
+                    </figure>
+                </div>
+                <div class="card-content">
+                    <div class="media">
+                        <div class="media-left">
+                            <figure class="image" style="height: 40px; width: 40px;">
+                                <img src="{{ photo.userImage }}" alt="{{ photo.name }}">
+                            </figure>
+                        </div>
+                        <div class="media-content">
+                            <p class="title is-4">{{ photo.name }}</p>
+                            <p class="subtitle is-6">{{ photo.email }}</p>
+                        </div>
+                    </div>
+
+                    <div class="content">
+                        {{ photo.message }}
+                        <br>
+                        <small>{{ photo.date | date: 'HH:mm - dd/MM/yyyy' }}</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

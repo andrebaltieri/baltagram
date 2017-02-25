@@ -1,0 +1,19 @@
+<section class="hero is-light is-medium animated fadeInDown">
+  <div class="hero-head">
+    <nav class="nav">
+      <div class="nav-left"></div>
+      <div class="nav-center">
+        <a routerLink="/home" class="nav-item pacifico logo-small">
+         baltagram
+        </a>
+      </div>
+
+      <div class="nav-right nav-menu">
+        <span class="nav-item"><img src="{{ user.image }}" alt="{{ user.name }}"></span>
+        <span class="nav-item">{{ user.name }}</span>
+        <span class="nav-item"><a routerLink="/upload" class="button"><span class="icon"><i class="fa fa-cloud"></i></span><span>Enviar</span></a></span>
+        <span class="nav-item"><a href="" class="button" (click)="logout()"><span class="icon"><i class="fa fa-power-off"></i></span><span>Sair</span></a></span>
+      </div>
+    </nav>
+  </div>
+</section>

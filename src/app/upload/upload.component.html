@@ -1,0 +1,24 @@
+<app-navbar></app-navbar>
+
+<section class="hero is-light is-fullheight">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <div class="columns">
+        <div class="column">
+          <img-cropper [image]="data" [settings]="cropperSettings"></img-cropper>
+        </div>
+        <div class="column">
+          <br>
+          <img *ngIf="data.image" [src]="data.image" [width]="cropperSettings.croppedWidth" [height]="cropperSettings.croppedHeight">
+          <img *ngIf="!data.image" src="http://placehold.it/350">
+        </div>
+      </div>
+      <p class="control is-large">
+        <textarea class="textarea" placeholder="Comente sobre sua foto" [(ngModel)]="message"></textarea>
+      </p>
+      <p>
+        <button class="button is-large" [disabled]="message == ''" (click)="submit()" id="submit-btn">ENVIAR</button>
+      </p>
+    </div>
+  </div>
+</section>
